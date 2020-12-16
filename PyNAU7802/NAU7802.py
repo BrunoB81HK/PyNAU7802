@@ -166,13 +166,7 @@ class NAU7802:
         except OSError:
             return False  # Sensor did not ACK
 
-        sign = value_list[0] >> 7  # Recover the sign bit if 0 -> +, if 1 -> -
-        value = value_list[0] << 16 & 0x7FFFFF  # The 0x7FFFFF remove the sign bit
-        value |= value_list[1] << 8 & 0xFFFF
-        value |= value_list[2] & 0xFF
-
-        if sign == 1:  # Change the sign according to the bit
-            value = -value
+        value = int.from_bytes(value_list, byteorder='big', signed=True)
 
         return value
 
