@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name='PyNAU7802',
-    version='0.1.0',
+    version='0.2.0',
     author='Bruno-Pier Busque',
     author_email='bruno-pier.busque@usherbrooke.ca',
     description="Python port of the SparkFun Qwiic Scale NAU7802 Arduino Library",
