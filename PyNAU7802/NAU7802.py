@@ -218,7 +218,7 @@ class NAU7802:
         """ Ask library for this value.Useful for storing value into NVM. """
         return self._calibrationFactor
 
-    def getWeight(self, allow_negative_weights: bool = False, samples_to_take: int = 8) -> float:
+    def getWeight(self, allow_negative_weights: bool = True, samples_to_take: int = 8) -> float:
         """ Once you 've set zero offset and cal factor, you can ask the library to do the calculations for you. """
         on_scale = self.getAverage(samples_to_take)
 
@@ -226,7 +226,7 @@ class NAU7802:
         # is zero'd, unloaded, and the load cell reports a value slightly less than zero value
         # causing the weight to be negative or jump to millions of pounds
 
-        if allow_negative_weights:
+        if not allow_negative_weights:
             if on_scale < self._zeroOffset:
                 on_scale = self._zeroOffset  # Force reading to zero
 
