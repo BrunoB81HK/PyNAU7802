@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "PyNAU7802"
+version = "0.2.2"
+description = "Python port of the SparkFun Qwiic Scale NAU7802 Arduino Library"
+authors = ["Bruno-Pier Busque <bruno.hockey.13@hotmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.7"
+smbus2 = "^0.4.2"
+
+[tool.poetry.group.rpi]
+optional = true
+
+[tool.poetry.group.rpi.dependencies]
+rpi-gpio = "^0.7.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -11,7 +11,9 @@ The function name and arguments are the exact same as the original library, use 
 [documentation](https://github.com/sparkfun/SparkFun_Qwiic_Scale_NAU7802_Arduino_Library)
 to get started.
 
-## Example
+## Examples
+
+Multiple examples are available in the [`examples/`](/examples) directory.
 
 This package use smbus2 as the I2C bus. Here is a small working example :
 
